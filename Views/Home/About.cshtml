@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ 
+    ViewBag.ListTitle = "Products";
+    ViewBag.Items = new List<string>() { "Mobiles", "Electronics", "Home Applications" };
+    Html.RenderPartial("ListPartialView");
+}

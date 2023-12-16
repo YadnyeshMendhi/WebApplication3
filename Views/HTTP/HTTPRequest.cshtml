@@ -1,0 +1,55 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request Properties</title>
+</head>
+<body>
+
+    <br /><br />
+    <form action="/action_page.php" method="post">
+        <input class="form-control" type="text" required="" placeholder="username" oninvalid="this.setCustomValidity('Please Enter valid input')" oninput="setCustomValidity('')">
+        <br />
+        <input class="form-control" type="text" placeholder="password" />
+        <br />
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+
+    <br /><br />
+    <div class="container-fluid">
+        <table class=" table table-bordered table-hover">
+            <tr>
+                <td>URL</td>
+                <td>@ViewBag.URL</td>
+            </tr>
+            <tr>
+                <td>PhysicalApplicationPath</td>
+                <td>@ViewBag.PhysicalApplicationPath</td>
+            </tr>
+            <tr>
+                <td>Path</td>
+                <td>@ViewBag.Path</td>
+            </tr>
+            <tr>
+                <td>BrowserType</td>
+                <td>@ViewBag.BrowserType</td>
+            </tr>
+            <tr>
+                <td>Headers</td>
+                <td>@ViewBag.Headers</td>
+            </tr>
+            <tr>
+                <td>Headers</td>
+                <td>@ViewBag.Method</td>
+            </tr>
+            <tr>
+                <td>QueryString</td>
+                <td>@ViewBag.QueryString</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="App.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿
+
+@{
+    int studentmarks;
+    string student;
+
+    if(ViewBag.studentmarks >=35)
+    {
+        student = "Pass";
+    }
+    else
+    {
+        student = "Fail";
+    }
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <br /><br />
+    <form action="/action_page.php" method="post">
+        <input class="form-control" type="text" required="" placeholder="username" oninvalid="this.setCustomValidity('Please Enter valid input')" oninput="setCustomValidity('')">
+        <br />
+        <input class="form-control" type="text"  placeholder="password" />
+        <br/>
+        <input type="submit" value="Submit"class="btn btn-primary">
+    </form>
+    
+    <br /><br />
+          <div class="container-fluid">
+              <table class=" table table-bordered table-hover">
+                  <tr>
+                      <td>Student ID</td>
+                      <td>@ViewBag.Studentid</td>
+                  </tr>
+                  <tr>
+                      <td>Student Name</td>
+                      <td>@ViewBag.Studentname</td>
+                  </tr>
+                  <tr>
+                      <td>Student Marks</td>
+                      <td>@ViewBag.Studentmarks</td>
+                  </tr>
+                  <tr>
+                      <td>Result</td>
+                      <td colspan="2">
+                          @if (student == "Pass")
+                          {
+                              <span class="text-success">Congratulations</span>
+                          }
+                          else
+                          {
+                              <span class="text-danger">Better luck bro Next time</span>
+                          }
+                      </td>
+
+                  </tr>
+                  <tr>
+                      <td>Semisters</td>
+                      <td>
+                          <ul>
+                              @for (int i = 0; i < ViewBag.NoOfSessions; i++)
+                              {
+                                  <li>@i</li>
+                              }
+                          </ul>
+                      </td>
+                  <tr>
+                      <td>Subjects</td>
+                      <td>
+                          <ul>
+                              @foreach (var subject in ViewBag.Subjects)
+                              {
+                                  <li>@subject</li>
+                              }
+                          </ul>
+                      </td>
+                     
+                  </tr>
+                  </tr>
+              </table>
+          </div>
+   
+
+    <script src="App.js"></script>
+</body>
+</html>
+
